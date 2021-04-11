@@ -1,19 +1,16 @@
-# SkyPeers
+# SkyGameSDK
 > developed for the ENCODE and the Built to Explore hackathons.
 
-> With SkyPeers, you can connect to friends through multiplayer games.
-
-> Perfect for non-realtime games where you want turn-based trustless updates.
+> With SkyGameSDK, you can easily add tons of features to WebGL games; multiplayer, screenshots, leaderboards, achievements, etc,,,
 
 # Inner workings
-SkyPeers work through MySky, SkyDB, and SkyNet;
-MySky is used for login, finding peers and saving configurations,
-SkyDB is used for multiplayer data - and SkyNet can be used here to upload larger files.
+sorry idk
 
 # Setup // TODO
 
 # License // TODO
 
 # Potential additions // TODO(partly)
+* Port to different languages
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
 * Working demo
