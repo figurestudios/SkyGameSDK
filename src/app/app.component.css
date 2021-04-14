@@ -1,0 +1,33 @@
+.main-body{
+    padding: 16px;
+}
+
+#main-iframe {
+    height: 700px;
+    width: 100%
+}
+
+#button-section {
+    margin-top: 24px;
+}
+
+.action-button {
+    margin-right: 16px;
+}
+
+#input-section {
+    margin-top: 16px;
+}
+
+.info-input {
+    margin-bottom: 8px;
+}
+
+.info-span{
+    font-weight: bold;
+}
+
+.data-span {
+    min-width: 150px;
+    display:inline-block
+}

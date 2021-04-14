@@ -5,6 +5,14 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "paths" : {
+      "crypto": [
+        "node_modules/crypto-browserify"
+      ],
+      "stream": [
+        "node_modules/stream-browserify"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
