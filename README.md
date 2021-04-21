@@ -5,14 +5,20 @@
 
 # Inner workings
 The cross-communication between the browser and Unity works through the PluginJS.jslib file in Unity's Assets/Plugins/WebGL file and the SendMessage() function in the game instance.
+
 DACs will currently only be implemented to send entries to the leaderboard. Will use it for a lobby system/screenshot feed/etc in the future once those added features come.
 
 # Planned features
 Screenshots will be implemented by using the passthrough using the Plugin.jslib, which will get the data for the screenshot and then get uploaded to Skynet.
+
 Leaderboards will work through publishing a feed to a DAC, although there will be obvious problems with trusting that leaderboard as there's no way to verify how legitimate it is.
+
 Realtime multiplayer will work through WebRTC, but since I can't add a decentralized TURN/STUN server I don't know how to make it acccessible to everyone, might work with websockets if those get added to Skynet.
+
 A friendlist could be added with MySky, adding all friends to a path and then looping through them to see if they've done the same.
+
 Lobbies could be built with DAC feeds once those are added, but might be hacky with unresponsive clients.
+
 Chess can be built from the demo below right now, just needs to pass either moves or full states of the game and add a chess engine to the project and it should basically be it.
 
 # Setup
