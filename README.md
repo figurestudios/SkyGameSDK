@@ -25,3 +25,4 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * Lobbies(done via mysky, host whitelists friends, friends posts publickey to skydb,,,)
 * Working chess example (should be here 27th-30th april, and then recieve updates)
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
+* Make it work as a .js import to .html & .ts
