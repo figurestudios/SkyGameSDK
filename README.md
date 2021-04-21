@@ -5,6 +5,7 @@
 
 # Inner workings
 The cross-communication between the browser and Unity works through the WebGLPluginJS.jslib file in Unity's Assets/Plugins/WebGL file and the SendMessage() function in the game instance.
+DACs will currently only be implemented to send entries to the leaderboard. Will use it for a lobby system/screenshot feed/etc in the future once those added features come.
 
 # Setup
 Download [this](https://siasky.net/AAB659zUOymZQY8zU9MX16MhJZoOBTRmFvFslGfunJ2Taw) file, unzip it, install WebGL for Unity, switch platform to WebGL, press "Build and Run" in Unity, swap out the generated .html file to the one provided in the project.
