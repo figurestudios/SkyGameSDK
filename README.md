@@ -23,5 +23,5 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * MySky for communication instead of skyDB
 * Screenshots (possible in Unity, and can then communicate to the browser with the WebGLPluginJS library)
 * Lobbies(done via mysky, host whitelists friends, friends posts publickey to skydb,,,)
-* Working chess example
+* Working chess example (should be here 27th-30th april, and then recieve updates)
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
