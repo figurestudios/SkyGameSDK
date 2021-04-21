@@ -12,9 +12,10 @@ Download [this](https://siasky.net/AAB659zUOymZQY8zU9MX16MhJZoOBTRmFvFslGfunJ2Ta
 # License
 This is covered by the MIT license. Feel free to use it almost however you like ;)
 
-# Done
+# Demos
 * [Early P2P Demo - SkyDB testing](https://100ccrtto8qqedqa84kb6sjcl609kbqirbevn2rv79avqu1fq5iikko.account.siasky.net/)
 * [Working "Color-Sharing" Demo - completed Unity<>SkyDB](https://60061g6oprj2pi50jku6el64c81f94r10kfgmtkqp5pij6sch8jfk00.siasky.net/)
+* [Video of "Color-Sharing"](https://siasky.net/AADbQgkgExh2Oo8wXcdot641m40Bzys7d_8JvYmnA7abHw)
 
 # Potential additions // TODO(partly)
 * HTML cleanup
