@@ -20,7 +20,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * HTML cleanup
 * Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>)
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
-* MySky for communication instead of 
+* MySky for communication instead of skyDB
 * Screenshots (possible in Unity, and can then communicate to the browser with the WebGLPluginJS library)
 * Lobbies(done via mysky, host whitelists friends, friends posts publickey to skydb,,,)
 * Working chess example
