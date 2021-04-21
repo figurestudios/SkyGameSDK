@@ -7,13 +7,18 @@
 The cross-communication between the browser and Unity works through the WebGLPluginJS.jslib file in Unity's Assets/Plugins/WebGL file and the SendMessage() function in the game instance.
 
 # Setup
-Clone this project, install WebGL for Unity, switch platform to WebGL, press "Build and Run" in Unity, swap out the generated .html file to the one provided in the project.
+Download [this](https://siasky.net/AAB659zUOymZQY8zU9MX16MhJZoOBTRmFvFslGfunJ2Taw) file, unzip it, install WebGL for Unity, switch platform to WebGL, press "Build and Run" in Unity, swap out the generated .html file to the one provided in the project.
+
+# License
+This is covered by the MIT license. Feel free to use it almost however you like ;)
 
 # Done
 * [Early P2P Demo - SkyDB testing](https://100ccrtto8qqedqa84kb6sjcl609kbqirbevn2rv79avqu1fq5iikko.account.siasky.net/)
 * [Working "Color-Sharing" Demo - completed Unity<>SkyDB](https://60061g6oprj2pi50jku6el64c81f94r10kfgmtkqp5pij6sch8jfk00.siasky.net/)
 
 # Potential additions // TODO(partly)
+* HTML cleanup
+* Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>)
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
 * MySky for communication instead of 
 * Screenshots (possible in Unity, and can then communicate to the browser with the WebGLPluginJS library)
