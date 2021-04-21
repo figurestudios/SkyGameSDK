@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | JS Plugin</title>
+    <title>Unity WebGL Player | SkyGameSDK Example</title>
     <script src="Build/UnityLoader.js"></script>
     <script src="https://skynet-js.hns.siasky.net/4.0-beta/index.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("unityContainer", "Build/test.json");
+      var gameInstance = UnityLoader.instantiate("unityContainer", "Build/SkyGameSDK Example Build.json");
       var random = Math.random().toString();
       const { publicKey } = skynet.genKeyPairFromSeed(random);
       const { privateKey } = skynet.genKeyPairFromSeed(random);
