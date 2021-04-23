@@ -19,6 +19,7 @@
 	     } = skynet.genKeyPairFromSeed(random);
        const client = new skynet.SkynetClient("https://siasky.net");
 	     const dataKey = "myApp";
+		
 	     function updateData() {
 	     	var _data = document.getElementById("inputData").value;
 	     	gameInstance.SendMessage("TestObject", "CallExternalFunction", _data);
@@ -33,6 +34,7 @@
 	     function sendDataToFriend() {
 	     	setJSON();
 	     }
+		
 	     async function getJSON() {
 	     	var friendID = document.getElementById("reciever").value;
 	     	console.log("trying to read data from: " + friendID);
@@ -48,6 +50,7 @@
 	     		console.log(error);
 	     	}
 	     }
+		
 	     async function setJSON() {
 	     	var data = document.getElementById("inputData").value;
 	     	const json = {
