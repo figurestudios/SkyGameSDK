@@ -8,7 +8,7 @@ The cross-communication between the browser and Unity works through the PluginJS
 
 DACs will currently only be implemented to send entries to the leaderboard. Will use it for a lobby system/screenshot feed/etc in the future once those added features come.
 
-# Planned features
+# Planned features (similar to the roadmap)[https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap]
 Screenshots will be implemented by using the passthrough using the Plugin.jslib, which will get the data for the screenshot and then get uploaded to Skynet.
 
 Leaderboards will work through publishing a feed to a DAC, although there will be obvious problems with trusting that leaderboard as there's no way to verify how legitimate it is.
@@ -35,13 +35,14 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 # Community projects
 * If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
 
-# Potential additions // TODO(partly) [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
-* HTML cleanup
-* Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>)
+# Potential additions // TODO(partly)
+* (HTML cleanup)[https://github.com/figurestudios/SkyGameSDK/blob/main/index.html]
+* Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>) [develop branch](https://github.com/figurestudios/SkyGameSDK/tree/develop)
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
-* MySky for communication instead of skyDB
+* MySky for communication instead of SkyDB
 * Screenshots (possible in Unity, and can then communicate to the browser with the WebGLPluginJS library)
 * Lobbies(done via mysky, host whitelists friends, friends posts publickey to skydb,,,)
-* Working chess example (should be here 27th-30th april, and then recieve updates)
+* Working chess example (should be here 27th-30th april, and then receive updates)
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
 * Make it work as a .js import to .html & .ts
+* [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
