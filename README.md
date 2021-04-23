@@ -8,7 +8,7 @@ The cross-communication between the browser and Unity works through the PluginJS
 
 DACs will currently only be implemented to send entries to the leaderboard. Will use it for a lobby system/screenshot feed/etc in the future once those added features come.
 
-# Planned features (similar to the roadmap)[https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap]
+# Planned features [similar to the roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
 Screenshots will be implemented by using the passthrough using the Plugin.jslib, which will get the data for the screenshot and then get uploaded to Skynet.
 
 Leaderboards will work through publishing a feed to a DAC, although there will be obvious problems with trusting that leaderboard as there's no way to verify how legitimate it is.
@@ -46,3 +46,4 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
 * Make it work as a .js import to .html & .ts
 * [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
+* .hns domain for Chess & Color-sharing demo
