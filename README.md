@@ -35,7 +35,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 # Community projects
 * If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
 
-# Potential additions // TODO(partly)
+# Potential additions // TODO(partly) [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
 * HTML cleanup
 * Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>)
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
