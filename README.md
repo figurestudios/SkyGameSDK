@@ -36,7 +36,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
 
 # Potential additions // TODO(partly)
-* (HTML cleanup)[https://github.com/figurestudios/SkyGameSDK/blob/main/index.html]
+* [HTML cleanup](https://github.com/figurestudios/SkyGameSDK/blob/main/index.html)
 * Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>) [develop branch](https://github.com/figurestudios/SkyGameSDK/tree/develop)
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
 * MySky for communication instead of SkyDB
