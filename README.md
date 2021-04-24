@@ -29,7 +29,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 
 # Demos
 * [Early P2P Demo - SkyDB testing](https://100ccrtto8qqedqa84kb6sjcl609kbqirbevn2rv79avqu1fq5iikko.account.siasky.net/)
-* [Working "Color-Sharing" Demo - completed Unity<>SkyDB](https://60061g6oprj2pi50jku6el64c81f94r10kfgmtkqp5pij6sch8jfk00.siasky.net/)
+* [Working "Color-Sharing" Demo - completed Unity<>SkyDB](https://abughadiyah.hns.siasky.net/)
 * [Video of "Color-Sharing"](https://siasky.net/AADbQgkgExh2Oo8wXcdot641m40Bzys7d_8JvYmnA7abHw)
 
 # Community projects
