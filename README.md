@@ -31,6 +31,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * [Early P2P Demo - SkyDB testing](https://100ccrtto8qqedqa84kb6sjcl609kbqirbevn2rv79avqu1fq5iikko.account.siasky.net/)
 * [Working "Color-Sharing" Demo - completed Unity<>SkyDB](https://abughadiyah.hns.siasky.net/)
 * [Video of "Color-Sharing"](https://siasky.net/AADbQgkgExh2Oo8wXcdot641m40Bzys7d_8JvYmnA7abHw)
+* [MySky Compatible Demo(contentrecord DAC on read SkyDB, more plans below)](https://6005spsf61u03eece9khb8m2q79u91hr75dmltajhpmmlj18127ejso.siasky.net/)
 
 # Community projects
 * If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
