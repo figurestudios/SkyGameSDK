@@ -1,100 +1,147 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta charset="utf-8">
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Unity WebGL Player | SkyGameSDK Example</title>
-	<script src="Build/UnityLoader.js">
-	</script>
-	<script src="https://skynet-js.hns.siasky.net/4.0-beta/index.js">
-	</script>
-	<script>
-	     var gameInstance = UnityLoader.instantiate("unityContainer", "Build/SkyGameSDK Example Build.json");
-	     var random = Math.random().toString();
-	     const {
-	     	publicKey
-	     } = skynet.genKeyPairFromSeed(random);
-	     const {
-	     	privateKey
-	     } = skynet.genKeyPairFromSeed(random);
-       const client = new skynet.SkynetClient("https://siasky.net");
-	     const dataKey = "myApp";
-		
-	     function updateData() {
-	     	var _data = document.getElementById("inputData").value;
-	     	gameInstance.SendMessage("TestObject", "CallExternalFunction", _data);
-	     }
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | SkyGameSDK Example</title>
+    <script src="Build/UnityLoader.js"></script>
+    <script src="https://skynet-js.hns.siasky.net/4.0-beta/index.js"></script>
+    <script src="https://siasky.net/_AAnblJDpo1aB9bjN5VFsZUTPBasmujkcQuiEDibAO6rQQ"></script>
+    <script>
+      //THESE VALUES SHOULD BE MODIFIED FOR YOUR LIKING!!!
+      const client = new skynet.SkynetClient("https://siasky.net"); //siasky portal by default, feel free to change
+      const dataKey = "myApp"; //enter your game name here if you want - shouldn't be any issues leaving it as is, though
+      var gameInstance = UnityLoader.instantiate("unityContainer", "Build/SkyGameSDK Example Build.json"); //Build/test.json will probably need to be adjusted if you change the name of your project.
+      var hnsDomain = "abughadiyah.hns"; //hns domain string
+      var skylink;
 
-	     function genRandomData() {
-	     	var _inputField = document.getElementById("inputData");
-	     	var random = Math.random().toString();
-	     	_inputField.value = random;
-	     }
+      //THESE TOO SHOULD BE CHANGED, IF YOU WANT A STANDALONE GAME
+      var unityCommunicatorObject = "TestObject"; //object to recieve browser communication
+      var unityRecieverFunction = "CallExternalFunction"; //function in script to handle incoming data from browser
 
-	     function sendDataToFriend() {
-	     	setJSON();
-	     }
-		
-	     async function getJSON() {
-	     	var friendID = document.getElementById("reciever").value;
-	     	console.log("trying to read data from: " + friendID);
-	     	var _inputField = document.getElementById("recievedData");
-	     	try {
-	     		const {
-	     			data,
-	     			skylink
-	     		} = await client.db.getJSON(friendID, dataKey);
-	     		gameInstance.SendMessage("TestObject", "CallExternalFunction", data.example);
-	     		_inputField.value = data.example;
-	     	} catch (error) {
-	     		console.log(error);
-	     	}
-	     }
-		
-	     async function setJSON() {
-	     	var data = document.getElementById("inputData").value;
-	     	const json = {
-	     		example: data
-	     	};
-	     	console.log("trying to send data: " + json.example);
-	     	try {
-	     		await client.db.setJSON(privateKey, dataKey, json);
-	     	} catch (error) {
-	     		console.log(error);
-	     	}
-	     }
+      //GENERIC, CAN BE IGNORED IN MOST CASES
+      const contentRecord = new contentrecord.ContentRecordDAC(); //makes contentrecord is accessable through contentrecord.*
+      var revisions = 0; //revision number, gets added on every revision in the revision function
+      var data = Math.random().toString(); //random string
+      var friendsPublicKey;
+      var canRead = false;
+      var hasInitialized = false;
+      function parseUrl(){ //if the link includes a hashtag, it will change the random value already assigned, if not, create a link + some logic to get friends public key
+        if (document.location.toString().includes("#")){
+          console.log("Includes a hashtag!");
+          data = document.location.toString().split('#/')[1];
+          data2 = document.location.toString().split('#/')[2];
+          const { publicKey } = skynet.genKeyPairFromSeed(data2);
+          skylink = "sia://" + hnsDomain + "#/" + data + "#/" + data2; //edits the skylink so that it may work for the contentrecord DAC
+          friendsPublicKey = publicKey;
+        } else {
+          var random = Math.random().toString();
+          var random2 = random + "#/" + data; //adding our random data as to value convenience/how short the link is over how secure the keys are - can be changed
+          document.location = document.location + "#/" + random + "#/" + data;
+          skylink = "sia://" + hnsDomain + "/#/" + random + "#/" + data; //edits the skylink so that it may work for the contentrecord DAC
+          const { publicKey } = skynet.genKeyPairFromSeed(random);
+          friendsPublicKey = publicKey;
+        }
+      }
+      parseUrl();
+      const { publicKey, privateKey, seed } = skynet.genKeyPairFromSeed(data); //generates publickey, private key and seed from randomness
 
-	     function setData() {
-	     	document.getElementById("inputData").value = prompt("enter data");
-	     	updateData();
-	     }
+      //THESE ARE ONLY HERE AS TO NOT SPAM CONTENTRECORD TOO MUCH
+      var oldData;
 
-	     function setReciever() {
-	     	document.getElementById("reciever").value = prompt("enter data");
-	     }
+      async function getJSON() { //retrieve slow data from skydb, any amount of data is fine
+        if (canRead == true){
+          try {
+            const { data, skylink } = await client.db.getJSON(friendsPublicKey, dataKey); //gets data and skylink from skyDB
+            if (data != null){ //simple check not to spam logs & contentrecord
+              gameInstance.SendMessage(unityCommunicatorObject, unityRecieverFunction, data.example); //sends data.example(json) to Unity
+              console.log("retrieved slow data: " + data.example);
+              setContentRecord(skylink, data.example); //adds the lobby link + read data to the contentrecord
+            }
+            } catch (error) {
+            console.log(error);
+          }
+        }
+      }
 
-	     function genRecieverID() {
-	     	document.getElementById("recieverID").value = publicKey;
-	     }
-	</script>
-</head>
-<body>
-	<p>Data retrieved from friend:</p>
-	<form>
-		<input id="recievedData" type="text" value="">
-	</form>
-	<p>Our data:</p>
-	<form>
-		<input id="inputData" type="text" value="">
-	</form>
-	<p>Friend's reciever ID:</p>
-	<form>
-		<input id="reciever" type="text" value="">
-	</form>
-	<p>Our reciever ID:</p>
-	<form>
-		<input id="recieverID" type="text" value=""> <button id="setData" onclick="setData()">send color in unity</button> <button id="genRandomData" onclick="genRandomData()">generate random color(TODO)</button> <button id="getJSON" onclick="getJSON()">read skyDB data</button> <button id="setJSON" onclick="setJSON()">send skyDB data</button> <button id="setReciever" onclick="setReciever()">set friend's recieverID</button> <button id="genRecieverID" onclick="genRecieverID()">generate recieverID</button>
-	</form>
-	<div id="unityContainer" style="width: 960px; height: 600px; margin: auto"></div>
-</body>
+      async function setJSON(_data) { //set slow data, any amount of data is fine
+        const json = { example: _data };
+        console.log("sending slow data: " + json.example);
+        setEntry(data);
+        try {
+          await client.db.setJSON(privateKey, dataKey, json);
+          console.log("sent slow data: " + json.example);
+          setContentRecord(skylink, json.example); //adds the lobby link + set data to the contentrecord
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      async function setEntry(_data){ //fast data(should be obsolete soon, just a workaround), don't send more than 70 bytes
+        var revision = BigInt(revisions);
+        var data = _data;
+        revisions++;
+        const entry = { dataKey, data, revision };
+        try {
+          await client.registry.setEntry(privateKey, entry);
+          console.log("sent fast data " + data);
+          setContentRecord(skylink, data); //adds the lobby link + set data to the contentrecord
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      async function getEntry(){ //get fast data =)
+        if (canRead == true){
+          try {
+            const { entry, signature } = await client.registry.getEntry(friendsPublicKey, dataKey);
+            if (entry != null){ //simple check not to spam logs & contentrecord
+              gameInstance.SendMessage(unityCommunicatorObject, unityRecieverFunction, entry.data); //sends data to unity
+              console.log("recieved data " + entry.data);
+              setContentRecord(skylink, entry.data); //adds the lobby link + read data to the contentrecord
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      }
+      
+      async function initMySky(){
+        if (hasInitialized == false){
+          hasInitialized = true;
+          const mySky = await client.loadMySky(hnsDomain, {debug: true});
+          const isLoggedIn = await mySky.checkLogin();
+          await mySky.loadDacs(contentRecord);
+          if (!isLoggedIn) {
+              await mySky.requestLoginAccess();
+          }
+          if (isLoggedIn){
+            canRead = true;
+          }
+        }
+      }
+      
+      async function setContentRecord(_skylink, _data){
+        if (oldData != _data && canRead == true){ //we need to make sure mysky is initialized
+          oldData = _data;
+          await contentRecord.recordNewContent({
+            _skylink,
+            metadata: {"gameData": _data} //exchange to your own personal needs - this is just an example and is generic
+            });
+            console.log("added data " + _data + " to contentrecord with skylink " + skylink);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+      </div>
+    </div>
+  </body>
 </html>
