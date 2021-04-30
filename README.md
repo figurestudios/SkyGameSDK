@@ -34,6 +34,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * [MySky Compatible Demo(contentrecord DAC on read SkyDB, more plans below)](https://6005spsf61u03eece9khb8m2q79u91hr75dmltajhpmmlj18127ejso.siasky.net/)
 * [Registry, "full" unity integration, link sharing !!NOT MYSKY COMPATIBLE DEMO!!](https://000ca1vundu3bmjk9e9v3881efald1245jtgvi0ej3guipsrtc17sb8.siasky.net/)
 * [Clean Demo - contentrecord, mysky, registry, link-sharing lobby,,,](https://0006cui2curjj2eeomd0p8aoa2h0iiga30cqoj2uqel1ncau7n98uvg.siasky.net/)
+* [WIP connect 4](https://0005keipsffk06o025rjmb9db8mlq9at2j310081nqom5ddna9n32ao.siasky.net/)
 
 # Community projects
 > If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
