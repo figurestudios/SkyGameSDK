@@ -58,7 +58,7 @@
             if (data != null){ //simple check not to spam logs & contentrecord
               gameInstance.SendMessage(unityCommunicatorObject, unityRecieverFunction, data.example); //sends data.example(json) to Unity
               console.log("retrieved slow data: " + data.example);
-              setContentRecord(skylink, data.example); //adds the lobby link + read data to the contentrecord
+              setContentRecord(data.example); //adds the lobby link + read data to the contentrecord
             }
             } catch (error) {
             console.log(error);
@@ -73,7 +73,7 @@
         try {
           await client.db.setJSON(privateKey, dataKey, json);
           console.log("sent slow data: " + json.example);
-          setContentRecord(skylink, json.example); //adds the lobby link + set data to the contentrecord
+          setContentRecord(json.example); //adds the lobby link + set data to the contentrecord
         } catch (error) {
           console.log(error);
         }
@@ -87,7 +87,7 @@
         try {
           await client.registry.setEntry(privateKey, entry);
           console.log("sent fast data " + data);
-          setContentRecord(skylink, data); //adds the lobby link + set data to the contentrecord
+          setContentRecord(data); //adds the lobby link + set data to the contentrecord
         } catch (error) {
           console.log(error);
         }
@@ -100,7 +100,7 @@
             if (entry != null){ //simple check not to spam logs & contentrecord
               gameInstance.SendMessage(unityCommunicatorObject, unityRecieverFunction, entry.data); //sends data to unity
               console.log("recieved data " + entry.data);
-              setContentRecord(skylink, entry.data); //adds the lobby link + read data to the contentrecord
+              setContentRecord(entry.data); //adds the lobby link + read data to the contentrecord
             }
           } catch (error) {
             console.log(error);
@@ -123,11 +123,11 @@
         }
       }
       
-      async function setContentRecord(_skylink, _data){
+      async function setContentRecord(_data){
         if (oldData != _data && canRead == true){ //we need to make sure mysky is initialized
           oldData = _data;
           await contentRecord.recordNewContent({
-            _skylink,
+            skylink,
             metadata: {"gameData": _data} //exchange to your own personal needs - this is just an example and is generic
             });
             console.log("added data " + _data + " to contentrecord with skylink " + skylink);
