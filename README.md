@@ -37,6 +37,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * [Registry, "full" unity integration, link sharing !!NOT MYSKY COMPATIBLE DEMO!!](https://000ca1vundu3bmjk9e9v3881efald1245jtgvi0ej3guipsrtc17sb8.siasky.net/)
 * [Clean Demo - contentrecord, mysky, registry, link-sharing lobby,,,](https://0006cui2curjj2eeomd0p8aoa2h0iiga30cqoj2uqel1ncau7n98uvg.siasky.net/)
 * [WIP connect 4](https://0005keipsffk06o025rjmb9db8mlq9at2j310081nqom5ddna9n32ao.siasky.net/)
+* [Connect-4](https://skorn.hns.siasky.net/)
 
 # Community projects
 > If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
@@ -50,4 +51,3 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
 * Make it work as a .js import to .html & .ts
 * [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
-* .hns domain for Chess & Color-sharing demo
