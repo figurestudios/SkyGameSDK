@@ -107,6 +107,27 @@
           }
         }
       }
+
+      async function getMySkyData(_data) {
+        if (hasInitialized == true){
+          try {
+            const { data, skylink } = await mySkyObject.getJSON(hnsDomain + "/path/file.json");
+            gameInstance.SendMessage(unityCommunicatorObject, unityRecieverFunction, data.message);
+          } catch (error) {
+            console.log(error)
+          }
+        }
+      }
+
+      async function setMySkyData(_data) {
+        if (hasInitialized == true){
+          try {
+            const { data, skylink } = await mySkyObject.setJSON(hnsDomain + "/path/file.json", { message: _data });
+          } catch (error) {
+            console.log(error)
+          }
+        }
+      }
       
       async function initMySky(){
         if (hasInitialized == false){
