@@ -8,6 +8,8 @@ The cross-communication between the browser and Unity works through the PluginJS
 
 DACs will currently only be implemented to send entries to the leaderboard. Will use it for a lobby system/screenshot feed/etc in the future once those added features come.
 
+Getting/setting MySky data can be used for something suchas stats, names or any other mutable data that should persist through multiple games.
+
 # Planned features [similar to the roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
 Screenshots will be implemented by using the passthrough using the Plugin.jslib, which will get the data for the screenshot and then get uploaded to Skynet.
 
@@ -41,12 +43,10 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * [Army Clash](https://github.com/mikopeck/ArmyClash) - a simple turn-based multiplayer game you can [play here](https://000ee3lblfvligrgnfncod3hhsk7o40cgphgd90a44puga03mufat2o.siasky.net/).
 
 # Potential additions // TODO(partly)
-* [HTML cleanup](https://github.com/figurestudios/SkyGameSDK/blob/main/index.html)
 * Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>) [develop branch](https://github.com/figurestudios/SkyGameSDK/tree/develop)
 * Real-time connections(might require websockets, as not everyone can connect with P2P without TURN/STUN servers)
 * Screenshots (possible in Unity, and can then communicate to the browser with the WebGLPluginJS library)
 * Lobbies(done via mysky, host whitelists friends, friends posts publickey to skydb,,,)
-* Working connect four example (should be here 30th april, and then receive updates)
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
 * Make it work as a .js import to .html & .ts
 * [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
