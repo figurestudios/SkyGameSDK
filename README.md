@@ -51,3 +51,14 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 * Extrapolation parameters in networking to simulate sync? (inclusion of time on send)
 * Make it work as a .js import to .html & .ts
 * [Roadmap](https://github.com/figurestudios/SkyGameSDK/wiki/Roadmap)
+
+# Special Thanks <3
+> Thanks to ChrisChrisChris#7003 for helping me for massively with the develop branch and further motivating me with this project
+> 
+> Thanks to Froggy#3210 for being the first person to use SkyGameSDK
+> 
+> Thanks to redsolver#0372 for helping me pitch ideas & make use of the registry
+> 
+> Thanks to dghelm#8125 and pjbrone#3584 for helping me with their API
+> 
+> Thanks to everyone else who's helped me & given suggestions
