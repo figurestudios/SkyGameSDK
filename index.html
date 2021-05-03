@@ -26,7 +26,7 @@
       var revisions = 0; //revision number, gets added on every revision in the revision function
       var data = Math.random().toString(); //random string
       var friendsPublicKey;
-      var canRead = false;
+      var canRead = true;
       var hasInitialized = false;
       function parseUrl(){ //if the link includes a hashtag, it will change the random value already assigned, if not, create a link + some logic to get friends public key
         if (document.location.toString().includes("#")){
