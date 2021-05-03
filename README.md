@@ -30,14 +30,8 @@ Download [this](https://siasky.net/AADSkQRkxk3eN66LNoLBCStsBqblZ0bThpp6Xu5i5Rsjy
 This is covered by the MIT license. Feel free to use it almost however you like ;)
 
 # Demos
-* [Early P2P Demo - SkyDB testing](https://100ccrtto8qqedqa84kb6sjcl609kbqirbevn2rv79avqu1fq5iikko.account.siasky.net/)
-* [Working "Color-Sharing" Demo - completed Unity<>SkyDB](https://abughadiyah.hns.siasky.net/)
-* [Video of "Color-Sharing"](https://siasky.net/AADbQgkgExh2Oo8wXcdot641m40Bzys7d_8JvYmnA7abHw)
-* [MySky Compatible Demo(contentrecord DAC on read SkyDB, more plans below)](https://6005spsf61u03eece9khb8m2q79u91hr75dmltajhpmmlj18127ejso.siasky.net/)
-* [Registry, "full" unity integration, link sharing !!NOT MYSKY COMPATIBLE DEMO!!](https://000ca1vundu3bmjk9e9v3881efald1245jtgvi0ej3guipsrtc17sb8.siasky.net/)
-* [Clean Demo - contentrecord, mysky, registry, link-sharing lobby,,,](https://0006cui2curjj2eeomd0p8aoa2h0iiga30cqoj2uqel1ncau7n98uvg.siasky.net/)
-* [WIP connect 4](https://0005keipsffk06o025rjmb9db8mlq9at2j310081nqom5ddna9n32ao.siasky.net/)
-* [Connect-4](https://skorn.hns.siasky.net/)
+* [Color-Sharing Demo](https://abughadiyah.hns.siasky.net/)
+* [Polished Connect-4](https://skorn.hns.siasky.net/)
 
 # Community projects
 > If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
