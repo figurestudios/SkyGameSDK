@@ -23,8 +23,18 @@ Lobbies could be built with DAC feeds once those are added, but might be hacky w
 
 Chess can be built from the demo below right now, just needs to pass either moves or full states of the game and add a chess engine to the project and it should basically be working.
 
-# Setup
-Download [this](https://siasky.net/AADSkQRkxk3eN66LNoLBCStsBqblZ0bThpp6Xu5i5RsjyQ) file, unzip it, install WebGL for Unity, switch platform to WebGL, press "Build and Run" in Unity, swap out the generated .html file to the one provided in the project. Comments should hopefully be sufficient, and if not, I can guide you through discord (stelballe#2785).
+# Setup (check open-source examples for inspiration)
+Fork this project
+
+Download version 2019.3.9f1 for Unity or a similar version(WebGL differs a lot from version to version);
+
+In Unity, make sure platform is set to WebGL. You can access all functions through the Plugin class, running for example "Plugin.SetFastData("test")".
+
+Then press "Build" and once that's completed, run $ serve in your commandline
+
+Lastly, swap the index.html file to the one in this repo
+
+Contact me on discord for 1-on-1 support (stelballe#2785)
 
 # License
 This is covered by the MIT license. Feel free to use it almost however you like ;)
