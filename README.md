@@ -45,7 +45,7 @@ This is covered by the MIT license. Feel free to use it almost however you like 
 
 # Community projects
 > If you want to be seen here, just push an edit with your project linked =) Ideas? Tic-tac-toe, rock-paper-scissors, anything luck-based using [this](https://entropybeacon.hns.siasky.net/), etc...
-* [Army Clash](https://github.com/mikopeck/ArmyClash) - a simple turn-based multiplayer game you can [play here](https://000fgnr66ahnc7suut3u4ulg125elh9h7q1kftotkq2pkufcpnmo9b0.siasky.net/).
+* [Army Clash](https://github.com/mikopeck/ArmyClash) - a simple turn-based multiplayer game you can [play here](blakerasor.hns.siasky.net).
 
 # Potential additions // TODO(partly)
 * Integrate to webapp(right now having CORS issues, as I had been loading it as an <iframe>) [develop branch](https://github.com/figurestudios/SkyGameSDK/tree/develop)
