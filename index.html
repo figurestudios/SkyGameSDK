@@ -29,7 +29,7 @@
       var hasInitialized = false;
 
       //TO BE IGNORED
-      var skylink;
+      var skylink = "sia://AABr1uIDTBGLAW4E2m_PVdo2DJij5EwASLsqcTCAxkB8Tg"; //generate a new one using the setAndGetSkylink function
       var oldData;
 
       function generateLobbyURL(){ //if the link includes a hashtag, it will change the random value already assigned, if not, create a link + some logic to get friends public key
@@ -190,6 +190,22 @@
       	const item = localStorage.getItem(_item);
       	console.log("item " + _item + ": " + item);
       	gameInstance.SendMessage(unityCommunicatorObject, unityRecieverFunction, item);
+      }
+      
+      async function setAndGetSkylink() { //function for random skylink, can be altered to work in "rooms" or be made deterministically from the host
+        const json = { example: "skylink" };
+        var random = Math.random().toString();
+        const { publicKey, privateKey } = skynet.genKeyPairFromSeed(random);
+        try {
+          await client.db.setJSON(privateKey, dataKey, json);
+          console.log("created skylink entry");
+          setTimeout(async function () {
+            const { entry, signature } = await client.registry.getEntry(publicKey, dataKey);
+            skylink = "sia://" + entry.data;
+          }, 20000); //might want to be changed, but skydb is quite laggy
+        } catch (error) {
+          console.log(error);
+        }
       }
     </script>
   </head>
