@@ -207,6 +207,24 @@
           console.log(error);
         }
       }
+      
+      function copyToClipboard(text) {
+          var toCopy = document.createElement("textarea");
+          document.body.appendChild(toCopy);
+          toCopy.value = text;
+          toCopy.select();
+          document.execCommand("copy");
+          document.body.removeChild(toCopy);
+      }
+      
+      function copyURL() {
+          var toCopy = document.createElement("textarea");
+          document.body.appendChild(toCopy);
+          toCopy.value = document.location;
+          toCopy.select();
+          document.execCommand("copy");
+          document.body.removeChild(toCopy);
+      }
     </script>
   </head>
   <body>
