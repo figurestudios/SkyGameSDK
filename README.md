@@ -34,7 +34,7 @@ Then press "Build" and once that's completed, run $ serve in your commandline
 
 Lastly, swap the index.html file to the one in this repo
 
-Contact me on discord for 1-on-1 support (stelballe#2785)
+Join this [discord server](https://discord.gg/fpqXNtFepM) for 1-on-1 support.
 
 # License
 This is covered by the MIT license. Feel free to use it almost however you like ;)
