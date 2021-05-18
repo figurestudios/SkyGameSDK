@@ -24,11 +24,13 @@ Lobbies could be built with DAC feeds once those are added, but might be hacky w
 Chess can be built from the demo below right now, just needs to pass either moves or full states of the game and add a chess engine to the project and it should basically be working.
 
 # Setup (check open-source examples for inspiration)
+[VIDEO GUIDE HERE](https://www.youtube.com/watch?v=QqZqeWKEqoo)
+
 Fork this project
 
 Download version 2019.3.9f1 for Unity or a similar version(WebGL differs a lot from version to version);
 
-In Unity, make sure platform is set to WebGL. You can access all functions through the Plugin class, running for example "Plugin.SetFastData("test")".
+In Unity, make sure platform is set to WebGL. You can access all functions through the SkyGame class, running for example "SkyGame.SetFastData("test")".
 
 Then press "Build" and once that's completed, run $ serve in your commandline
 
